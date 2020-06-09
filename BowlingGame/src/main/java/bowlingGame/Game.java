@@ -1,4 +1,4 @@
-package BowlingGame;
+package bowlingGame;
 
 public class Game {
 

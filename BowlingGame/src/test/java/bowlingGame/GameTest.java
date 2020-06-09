@@ -1,4 +1,4 @@
-package BowlingGame;
+package bowlingGame;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -7,6 +7,8 @@ import java.util.stream.IntStream;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import bowlingGame.Game;
 
 public class GameTest {
 
@@ -48,6 +50,12 @@ public class GameTest {
 		game.roll(4);
 		rollMany(17, 0);
 		assertThat(game.score(), is(24));
+	}
+
+	@Test
+	public void testPerfectGame() {
+		rollMany(12, 10);
+		assertThat(game.score(), is(300));
 	}
 
 	private void rollStrike() {
