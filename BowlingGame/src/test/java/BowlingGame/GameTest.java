@@ -41,6 +41,19 @@ public class GameTest {
 		assertThat(game.score(), is(16));
 	}
 
+	@Test
+	public void testOneStrike() {
+		rollStrike();
+		game.roll(3);
+		game.roll(4);
+		rollMany(17, 0);
+		assertThat(game.score(), is(24));
+	}
+
+	private void rollStrike() {
+		game.roll(10);
+	}
+
 	private void rollSpare() {
 		game.roll(5);
 		game.roll(5);
