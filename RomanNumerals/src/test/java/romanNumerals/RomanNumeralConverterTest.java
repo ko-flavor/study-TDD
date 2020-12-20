@@ -10,14 +10,16 @@ public class RomanNumeralConverterTest {
 
 	@Test
 	public void test_one_is_converted_to_I() {
-		String result = this.converter.convert(1);
-		assertThat(result).isEqualTo("I");
+		assertThat(this.converter.convert(1)).isEqualTo("I");
 	}
 
 	@Test
 	public void test_two_is_converted_to_II() {
-		String result = this.converter.convert(2);
-		assertThat(result).isEqualTo("II");
+		assertThat(this.converter.convert(2)).isEqualTo("II");
 	}
 
+	@Test
+	public void test_three_is_converted_to_III() {
+		assertThat(this.converter.convert(3)).isEqualTo("III");
+	}
 }
