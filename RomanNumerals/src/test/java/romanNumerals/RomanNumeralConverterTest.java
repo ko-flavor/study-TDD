@@ -2,11 +2,17 @@ package romanNumerals;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class RomanNumeralConverterTest {
 
-	RomanNumeralConverter converter = new RomanNumeralConverter();
+	RomanNumeralConverter converter;
+
+	@BeforeEach
+	public void setup() {
+		this.converter = new RomanNumeralConverter();
+	}
 
 	@Test
 	public void test_one_is_converted_to_I() {
@@ -32,4 +38,10 @@ public class RomanNumeralConverterTest {
 	public void test_six_is_converted_to_VI() {
 		assertThat(this.converter.convert(6)).isEqualTo("VI");
 	}
+
+	@Test
+	public void test_ten_is_converted_to_X() {
+		assertThat(this.converter.convert(10)).isEqualTo("X");
+	}
+
 }
