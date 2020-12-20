@@ -22,4 +22,9 @@ public class RomanNumeralConverterTest {
 	public void test_three_is_converted_to_III() {
 		assertThat(this.converter.convert(3)).isEqualTo("III");
 	}
+
+	@Test
+	public void test_five_is_converted_to_V() {
+		assertThat(this.converter.convert(5)).isEqualTo("V");
+	}
 }
