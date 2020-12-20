@@ -1,6 +1,6 @@
 package romanNumerals;
 
-import java.util.stream.IntStream;
+import java.util.function.BiConsumer;
 
 public class RomanNumeralConverter {
 
@@ -9,9 +9,11 @@ public class RomanNumeralConverter {
 
 	public String convert(int numberToConvert) {
 		initVariables(numberToConvert);
-		appendX();
-		appendV();
-		appendI();
+		appendRoman.accept(10, "X");
+		appendRoman.accept(9, "IX");
+		appendRoman.accept(5, "V");
+		appendRoman.accept(4, "IV");
+		appendRoman.accept(1, "I");
 		return this.builder.toString();
 	}
 
@@ -20,22 +22,11 @@ public class RomanNumeralConverter {
 		this.number = numberToConvert;
 	}
 
-	private void appendX() {
-		if (number >= 10) {
-			builder.append("X");
-			number = number - 10;
+	private BiConsumer<Integer, String> appendRoman = (i, str) -> {
+		while (number >= i) {
+			builder.append(str);
+			number = number - i;
 		}
-	}
-
-	private void appendV() {
-		if (number >= 5) {
-			builder.append("V");
-			number = number - 5;
-		}
-	}
-
-	private void appendI() {
-		IntStream.rangeClosed(1, number).forEach(i -> builder.append("I"));
-	}
+	};
 
 }

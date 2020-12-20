@@ -30,6 +30,11 @@ public class RomanNumeralConverterTest {
 	}
 
 	@Test
+	public void test_four_is_converted_to_IV() {
+		assertThat(this.converter.convert(4)).isEqualTo("IV");
+	}
+
+	@Test
 	public void test_five_is_converted_to_V() {
 		assertThat(this.converter.convert(5)).isEqualTo("V");
 	}
@@ -37,6 +42,11 @@ public class RomanNumeralConverterTest {
 	@Test
 	public void test_six_is_converted_to_VI() {
 		assertThat(this.converter.convert(6)).isEqualTo("VI");
+	}
+
+	@Test
+	public void test_nine_is_converted_to_IX() {
+		assertThat(this.converter.convert(9)).isEqualTo("IX");
 	}
 
 	@Test
