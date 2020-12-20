@@ -8,6 +8,7 @@ public class RomanNumeralConverter {
 	int number;
 
 	public String convert(int numberToConvert) {
+		checkArgument(numberToConvert);
 		initVariables(numberToConvert);
 		appendRoman.accept(1000, "M");
 		appendRoman.accept(900, "CM");
@@ -23,6 +24,12 @@ public class RomanNumeralConverter {
 		appendRoman.accept(4, "IV");
 		appendRoman.accept(1, "I");
 		return this.builder.toString();
+	}
+
+	private void checkArgument(int numberToConvert) {
+		if (!(0 < numberToConvert && numberToConvert < 4000)) {
+			throw new IllegalArgumentException("Argument must be between 1 and 3999.");
+		}
 	}
 
 	private void initVariables(int numberToConvert) {

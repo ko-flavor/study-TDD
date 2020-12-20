@@ -1,6 +1,7 @@
 package romanNumerals;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -104,4 +105,13 @@ public class RomanNumeralConverterTest {
 		assertThat(this.converter.convert(3999)).isEqualTo("MMMCMXCIX");
 	}
 
+	@Test
+	public void test_zero_cannot_be_converted() {
+		assertThrows(IllegalArgumentException.class, () -> this.converter.convert(0));
+	}
+
+	@Test
+	public void test_fourthousand_cannot_be_converted() {
+		assertThrows(IllegalArgumentException.class, () -> this.converter.convert(4000));
+	}
 }
