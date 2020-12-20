@@ -9,6 +9,14 @@ public class RomanNumeralConverter {
 
 	public String convert(int numberToConvert) {
 		initVariables(numberToConvert);
+		appendRoman.accept(1000, "M");
+		appendRoman.accept(900, "CM");
+		appendRoman.accept(500, "D");
+		appendRoman.accept(400, "CD");
+		appendRoman.accept(100, "C");
+		appendRoman.accept(90, "XC");
+		appendRoman.accept(50, "L");
+		appendRoman.accept(40, "XL");
 		appendRoman.accept(10, "X");
 		appendRoman.accept(9, "IX");
 		appendRoman.accept(5, "V");

@@ -58,4 +58,50 @@ public class RomanNumeralConverterTest {
 	public void test_eleven_is_converted_to_XI() {
 		assertThat(this.converter.convert(11)).isEqualTo("XI");
 	}
+
+	@Test
+	public void test_forty_is_converted_to_XL() {
+		assertThat(this.converter.convert(40)).isEqualTo("XL");
+	}
+
+	@Test
+	public void test_fifty_is_converted_to_L() {
+		assertThat(this.converter.convert(50)).isEqualTo("L");
+	}
+
+	@Test
+	public void test_ninty_is_converted_to_XC() {
+		assertThat(this.converter.convert(90)).isEqualTo("XC");
+	}
+
+	@Test
+	public void test_hundred_is_converted_to_C() {
+		assertThat(this.converter.convert(100)).isEqualTo("C");
+	}
+
+	@Test
+	public void test_fourhundred_is_converted_to_CD() {
+		assertThat(this.converter.convert(400)).isEqualTo("CD");
+	}
+
+	@Test
+	public void test_fivehundred_is_converted_to_D() {
+		assertThat(this.converter.convert(500)).isEqualTo("D");
+	}
+
+	@Test
+	public void test_ninehundred_is_converted_to_CM() {
+		assertThat(this.converter.convert(900)).isEqualTo("CM");
+	}
+
+	@Test
+	public void test_thousand_is_converted_to_M() {
+		assertThat(this.converter.convert(1000)).isEqualTo("M");
+	}
+
+	@Test
+	public void test_maxRoman_is_converted_to_MMMCMXCIX() {
+		assertThat(this.converter.convert(3999)).isEqualTo("MMMCMXCIX");
+	}
+
 }
