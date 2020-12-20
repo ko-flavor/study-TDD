@@ -44,4 +44,8 @@ public class RomanNumeralConverterTest {
 		assertThat(this.converter.convert(10)).isEqualTo("X");
 	}
 
+	@Test
+	public void test_eleven_is_converted_to_XI() {
+		assertThat(this.converter.convert(11)).isEqualTo("XI");
+	}
 }
