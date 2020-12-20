@@ -27,4 +27,9 @@ public class RomanNumeralConverterTest {
 	public void test_five_is_converted_to_V() {
 		assertThat(this.converter.convert(5)).isEqualTo("V");
 	}
+
+	@Test
+	public void test_six_is_converted_to_VI() {
+		assertThat(this.converter.convert(6)).isEqualTo("VI");
+	}
 }
